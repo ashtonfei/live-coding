@@ -5,9 +5,10 @@ All my live coding projects published on YouTube channel can be found here in th
 
 ## List of projects
 
-| Index                                                                          | Project Folder                    | YouTube                              | Date released | Category   | About                                                                                         |
-| ------------------------------------------------------------------------------ | --------------------------------- | ------------------------------------ | ------------- | ---------- | --------------------------------------------------------------------------------------------- |
-| [LC001](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC001) | Google Doc Automation with DocPro | [Link](https://youtu.be/uwD91dKRw2w) | 4/Oct/2021    | `document` | Create a doc with data from sheet automatically with `text`, `image`, and `table` replacement |
+| Index                                                                          | Project Folder                    | YouTube                              | Date released | Category      | About                                                                                         |
+| ------------------------------------------------------------------------------ | --------------------------------- | ------------------------------------ | ------------- | ------------- | --------------------------------------------------------------------------------------------- |
+| [LC001](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC001) | Google Doc Automation with DocPro | [Link](https://youtu.be/uwD91dKRw2w) | 4/Oct/2021    | `document`    | Create a doc with data from sheet automatically with `text`, `image`, and `table` replacement |
+| [LC002](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC002) | Send & Track Gmail                | [Link](https://youtu.be/uwD91dKRw2w) | 9/Oct/2021    | `spreadsheet` | Send an email and track it with apps script                                                   |
 
 ## Build commands
 
