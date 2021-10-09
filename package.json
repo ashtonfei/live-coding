@@ -7,8 +7,7 @@
     "push": "cd ./src/projects/$node_config_i; clasp push",
     "pull": "cd ./src/projects/$node_config_i; clasp push",
     "open": "cd ./src/projects/$node_config_i; clasp push",
-    "doc": "jsdoc2md ./src/projects/$node_config_i/*.js > ./src/projects/$node_config_i/DOCUMENT.md",
-    "gush": "git add . & git commit -m $node_config_m & git push"
+    "doc": "jsdoc2md ./src/projects/$node_config_i/*.js > ./src/projects/$node_config_i/DOCUMENT.md"
   },
   "repository": {
     "type": "git",

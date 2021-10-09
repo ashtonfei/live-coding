@@ -52,16 +52,14 @@ or
 cd ./src/projects/[project folder]; clasp open
 ```
 
-Push to github
+Build a document.md from JSDOC
 
 ```bash
-npm run gush --m=[commit message]
+npm run doc -i=[project_index=LC001]
 ```
 
 or
 
 ```bash
-git add .
-git commit -m [commit message]
-git push
+cd ./src/projects/[project folder]; jsdoc2md *.js > DOCUMENT.md
 ```
