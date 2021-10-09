@@ -20,7 +20,7 @@ npm install
 Push the local project to the remote Google Apps Script project
 
 ```bash
-npm run push -i=[project_index=LC001]
+npm run push --i=[project_index=LC001]
 ```
 
 or
@@ -32,7 +32,7 @@ cd ./src/projects/[project folder]; clasp push
 Pull the remote Google Apps Script project to local
 
 ```bash
-npm run pull -i=[project_index=LC001]
+npm run pull --i=[project_index=LC001]
 ```
 
 or
@@ -44,7 +44,7 @@ cd ./src/projects/[project folder]; clasp pull
 Open the remote Google Apps Script project
 
 ```bash
-npm run open -i=[project_index=LC001]
+npm run open --i=[project_index=LC001]
 ```
 
 or
@@ -56,7 +56,7 @@ cd ./src/projects/[project folder]; clasp open
 Build a document.md from JSDOC
 
 ```bash
-npm run doc -i=[project_index=LC001]
+npm run doc --i=[project_index=LC001]
 ```
 
 or
