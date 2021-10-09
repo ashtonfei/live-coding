@@ -51,3 +51,17 @@ or
 ```bash
 cd ./src/projects/[project folder]; clasp open
 ```
+
+Push to github
+
+```bash
+npm run gush --m=[commit message]
+```
+
+or
+
+```bash
+git add .
+git commit -m [commit message]
+git push
+```
