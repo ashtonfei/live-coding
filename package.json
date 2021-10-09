@@ -1,0 +1,43 @@
+{
+  "name": "live-coding",
+  "version": "1.0.0",
+  "description": "All my live coding projects published on my YouTube channel https://youtube.com/ashtonfei/",
+  "main": "index.js",
+  "scripts": {
+    "push": "cd ./src/projects/$node_config_i; clasp push",
+    "pull": "cd ./src/projects/$node_config_i; clasp push",
+    "open": "cd ./src/projects/$node_config_i; clasp push",
+    "doc": "jsdoc2md ./src/projects/$node_config_i/*.js > ./src/projects/$node_config_i/DOCUMENT.md",
+    "gush": "git add . & git commit -m $node_config_m & git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashtonfei/live-coding.git"
+  },
+  "keywords": [
+    "gas",
+    "apps script",
+    "google apps script",
+    "live coding'",
+    "google sheet'",
+    "google doc",
+    "google form",
+    "google slide",
+    "gmail",
+    "automation",
+    "macro",
+    "javascript"
+  ],
+  "author": "Ashton Fei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashtonfei/live-coding/issues"
+  },
+  "homepage": "https://github.com/ashtonfei/live-coding#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.4.1",
+    "@types/google-apps-script": "^1.0.37",
+    "jsdoc-to-markdown": "^7.0.1",
+    "npm": "^8.0.0"
+  }
+}
