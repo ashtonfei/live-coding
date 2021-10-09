@@ -1,0 +1,15 @@
+{
+  "timeZone": "Asia/Shanghai",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "DocPro",
+        "version": "0",
+        "libraryId": "1vXUWSkiph-ShFNhgbodig7e4foq8YJiVWOSdlUsfLgf8jjKZhYX6K8JF",
+        "developmentMode": true
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
