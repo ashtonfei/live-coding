@@ -7,5 +7,5 @@ Turn a Google Document into a Web Application
 ## Links
 
 - [Make a copy](https://docs.google.com/document/d/14gPU1_QZQ2DPGokuZ_ZKeX3T5_S27mU-XVUca_7Bk64/copy)
-- [Watch on YouTube](https://youtu.be/P8L3yRpSngI)
+- [Watch on YouTube](https://youtu.be/rIZ7UC3kNWU)
 - [My YouTube Channel](https://youtube.com/ashtonfei/)
