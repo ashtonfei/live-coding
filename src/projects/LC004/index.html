@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1>Demo Form</h1>
+
+    <form action="https://script.google.com/macros/s/AKfycbyIev0bdfn7UMwCBiSKWC_aHmilASjeXrW81evS4Lwg/dev" method="POST">
+      <!-- Select 1st : College -->
+      <div>
+        <label for="college">College</label>
+        <select name="college" id="college">
+        </select>
+      </div>
+      <!-- Select 2nd : Department -->
+      <div>
+        <label for="department">Department</label>
+        <select name="department" id="department">
+        </select>
+      </div>
+      <!-- Select 3rd : Teacher -->
+      <div>
+        <label for="teacher">Teacher</label>
+        <select name="teacher" id="teacher">
+        </select>
+      </div>
+      <!-- File input : Profile -->
+      <div>
+        <label for="profile">Upload a profile image</label>
+        <input type="file" id="profile" name="profile">
+        <input id="data" name="data" hidden>
+        <img alt="profile image" id="preview" width="300" height="300">
+      </div>
+      <!-- Submit button -->
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
+    <!-- Link the javascript -->
+    <?!= link('js'); ?>
+  </body>
+</html>
