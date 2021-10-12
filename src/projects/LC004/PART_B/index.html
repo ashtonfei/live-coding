@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<base target="_top">
+	<!-- Bootstarp CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6">
+				<h1>Demo Form</h1>
+
+				<form action="https://script.google.com/macros/s/AKfycbzPo_jGel-cJAIPA8PQ52wL1epFxEQrkTomP_bltQN96XkyTVsW6nro3IZ-IUiFG_x9iw/exec"
+					method="POST">
+					<!-- Select 1st : College -->
+					<div class="mb-3">
+						<label for="college" class="form-label">College</label>
+						<select name="college" id="college" class="form-control">
+          </select>
+					</div>
+					<!-- Select 2nd : Department -->
+					<div class="mb-3">
+						<label for="department"class="form-label">Department</label>
+						<select name="department" id="department" class="form-control">
+          </select>
+					</div>
+					<!-- Select 3rd : Teacher -->
+					<div class="mb-3">
+						<label for="teacher"class="form-label">Teacher</label>
+						<select name="teacher" id="teacher" class="form-control">
+          </select>
+					</div>
+					<!-- File input : Profile -->
+					<div class="mb-3">
+						<label for="profile"class="form-label">Upload a profile image</label>
+						<input type="file" id="profile" name="profile" class="form-control" accept="image/*">
+						<input id="data" name="data" hidden>
+						<img alt="profile image" id="preview" class="img-fluid">
+        </div>
+						<!-- Submit button -->
+						<div class="mb-3">
+							<input type="submit" value="Submit" class="form-control btn btn-primary">
+        </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap Javascript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+	</script>
+	<!-- Link the javascript -->
+	<?!= link('js'); ?>
+</body>
+
+</html>

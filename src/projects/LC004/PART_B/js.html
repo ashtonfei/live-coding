@@ -1,0 +1,77 @@
+<script>
+  // Dropdown dataset
+  const colleges = {
+    "Engineering": {
+      "Software Engineering": [
+        "Abby", "Bob", "Chris"
+      ],
+      "Electronic Engineering": [
+        "Daniel","Ella", "Frank"
+      ]
+    },
+    "Language": {
+      "English": [
+        "Gary", "Helen", "Ivy"
+      ],
+      "Japanese": [
+        "Honda", "Anri", "Fuji"
+      ]
+    }
+  }
+
+  // links to form elements
+  const selectCollege = document.getElementById("college")
+  const selectDepartment = document.getElementById("department")
+  const selectTeacher = document.getElementById("teacher")
+
+  const inputProfile = document.getElementById("profile")
+  const imgPreview = document.getElementById("preview")
+  const inputData = document.getElementById("data")
+
+  // update the select option
+  function updateSelectOptions(select, options, placeholder="Select one item"){
+    if (!Array.isArray(options)){
+      options = Object.keys(options)
+    }
+    let htmlOptions = `<option value="" disabled selected>${placeholder}</option>`
+    options.forEach(option => {
+      htmlOptions += `<option value="${option}">${option}</option>`
+    })
+    select.innerHTML = htmlOptions
+  }
+
+  updateSelectOptions(selectCollege, colleges, "Select a college")
+  selectCollege.addEventListener("change", function(){
+    const keyOfCollege = selectCollege.value
+    updateSelectOptions(selectDepartment, colleges[keyOfCollege], "Select a department")
+  })
+  selectDepartment.addEventListener("change", function(){
+    const keyOfCollege = selectCollege.value
+    const keyOfDepartment = selectDepartment.value
+    updateSelectOptions(selectTeacher, colleges[keyOfCollege][keyOfDepartment], "Select a teacher")
+  })
+
+
+  // handle file uploader
+  inputProfile.addEventListener("change", function(){
+    const file = inputProfile.files[0]
+    if (!file) return
+    const reader = new FileReader()
+    reader.addEventListener("load", function(){
+      imgPreview.src = reader.result
+      inputData.value = reader.result
+    })
+    reader.readAsDataURL(file)
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
