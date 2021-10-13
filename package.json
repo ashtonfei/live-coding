@@ -37,6 +37,7 @@
     "@google/clasp": "^2.4.1",
     "@types/google-apps-script": "^1.0.37",
     "jsdoc-to-markdown": "^7.0.1",
-    "npm": "^8.0.0"
+    "npm": "^8.0.0",
+    "typescript": "^4.4.4"
   }
 }
