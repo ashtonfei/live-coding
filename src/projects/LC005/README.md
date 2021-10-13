@@ -37,6 +37,6 @@ clasp pull
 ## Links
 
 - [Make a copy](https://docs.google.com/spreadsheets/d/1VdEFm0B7ggMVBU4p6OH7k5KMH1RXIwDx8YPrA03g2yU/copy)
-- [Watch on YouTube](https://youtu.be/J-YEwIDwl_8)
+- [Watch on YouTube](https://youtu.be/CLGUsqHGqrw)
 - [@google/clasp](https://github.com/google/clasp)
 - [Google/Clasp Guide](https://developers.google.com/apps-script/guides/clasp)

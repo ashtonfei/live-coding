@@ -11,6 +11,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC002](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC002) | Send & Track Gmail                     | [Watch](https://youtu.be/P8L3yRpSngI) | 9/Oct/2021    | `spreadsheet` | Send an email and track it with apps script                                                   |
 | [LC003](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC003) | Google Doc to Web App                  | [Watch](https://youtu.be/rIZ7UC3kNWU) | 10/Oct/2021   | `doc`         | Turn a google doc into a web app                                                              |
 | [LC004](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC004) | Form with Multiple Dependent Dropdowns | [Watch](https://youtu.be/J-YEwIDwl_8) | 11/Oct/2021   | `spreadsheet` | A form built with multiple dependent dropdowns                                                |
+| [LC005](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC005) | Build a Project with TypeScript        | [Watch](https://youtu.be/CLGUsqHGqrw) | 13/Oct/2021   | `spreadsheet` | Build a Poroject with TypeScript and Clasp                                                    |
 
 ## Build commands
 
