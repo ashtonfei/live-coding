@@ -14,6 +14,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC005](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC005) | Build a Project with TypeScript        | [Watch](https://youtu.be/CLGUsqHGqrw) | 13/Oct/2021   | `spreadsheet` | Build a Poroject with TypeScript and Clasp                                                    |
 | [LC006](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC006) | Mail Merge with Draft as Template      | [Watch](https://youtu.be/LzaF8wIs4rw) | 22/Oct/2021   | `spreadsheet` | Mail merge with Gmail Draft as a template                                                     |
 | [LC007](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC007) | Read Data from PDF to Sheet            | [Watch](https://youtu.be/RHniZAqBHzk) | 7/Nov/2021    | `spreadsheet` | Read text data from PDF with ORC provided by Google Drive API                                 |
+| [LC008](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC008) | IMDb Web Crawler                       | [Watch](https://youtu.be/vjU8JUyUdwY) | 19/Nov/2021   | `spreadsheet` | A web scrapper built with apps script                                                         |
 
 ## Build commands
 
