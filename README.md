@@ -16,6 +16,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC007](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC007) | Read Data from PDF to Sheet            | [Watch](https://youtu.be/RHniZAqBHzk) | 7/Nov/2021    | `spreadsheet` | Read text data from PDF with ORC provided by Google Drive API                                 |
 | [LC008](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC008) | IMDb Web Crawler                       | [Watch](https://youtu.be/vjU8JUyUdwY) | 19/Nov/2021   | `spreadsheet` | A web scrapper built with apps script                                                         |
 | [LC009](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC009) | Dependent Dropdowns in Google Sheet    | [Watch](https://youtu.be/1H21-aF4A2o) | 19/Nov/2021   | `spreadsheet` | Create dependent dropdowns in Google Sheet                                                    |
+| [LC010](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC010) | CRUD App with Vue/Bootstrap/GAS        | [Watch](https://youtu.be/X9XaSLdqP20) | 11/Dec/2021   | `spreadsheet` | A CRUD Web App with Vue/Bootstrap/GAS                                                         |
 
 ## Build commands
 
