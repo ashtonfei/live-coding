@@ -1,0 +1,67 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      name: "CRUD APP with Vue/Bootstrap/GAS",
+      loading: false,
+      sheetName: "Customer",
+      page: 1,
+      pageSize: 15,
+      pages: 1,
+      items: [],
+      headers: [
+        {text: "ID", value: "id"},
+        {text: "Name", value: "name"},
+        {text: "Description", value: "description"},
+        {text: "City", value: "city"},
+      ],
+    },
+    methods: {
+      decreasePageNumber(){
+        this.page --
+      },
+      increasePageNumber(){
+        this.page ++
+      },
+    },
+    watch:{
+      page: function(){
+        const params = {
+          sheetName: this.sheetName,
+          pageSize: this.pageSize,
+          page: this.page
+        }
+        google.script.run
+          .withSuccessHandler(res => {
+            const {pages, items} = JSON.parse(res)
+            this.pages = pages
+            this.items = [...items]
+          })
+          .withFailureHandler(err => {
+            console.error(err)
+          })
+          .getItems(JSON.stringify(params))
+      },
+    },
+    created(){
+      const params = {
+        sheetName: this.sheetName,
+        pageSize: this.pageSize,
+        page: this.page,
+      }
+      google.script.run
+        .withSuccessHandler(res => {
+          const {items, pages} = JSON.parse(res)
+          this.items = [...items]
+          this.pages = pages
+          console.log(this.items)
+          console.log(this.pages)
+        })
+        .withFailureHandler(err => {
+          console.error(err)
+        })
+        .getItems(JSON.stringify(params))
+    }
+  })
+</script>
