@@ -1,0 +1,163 @@
+<script>
+  const customerFormData = {
+    id: {
+      id: "id",
+      label: "ID",
+      type: "text",
+      value: null,
+      disabled: true,
+    },
+    name: {
+      id: "name",
+      label: "Name",
+      type: "text",
+      value: null,
+    },
+    description: {
+      id: "description",
+      label: "Description",
+      type: "textarea",
+      value: null,
+      rows: 3,
+    },
+    email: {
+      id: "email",
+      label: "Email",
+      type: "email",
+      value: null,
+    },
+    phone: {
+      id: "phone",
+      label: "Phone",
+      type: "tel",
+      value: null,
+    },
+    address: {
+      id: "address",
+      label: "Address",
+      type: "textarea",
+      value: null,
+      rows: 3,
+    },
+    city: {
+      id: "city",
+      label: "City",
+      type: "select",
+      value: null,
+      options: ["Shenzhen", "New York", "Okasa", "Paris"]
+    },
+    state: {
+      id: "state",
+      label: "State",
+      type: "select",
+      value: null,
+      options: ["China", "USA", "Japan", "France", "Hungry"]
+    },
+  }
+
+  const vInput = Vue.component("v-input", {
+    props: {
+      item: Object,
+      // item = {id: "name", label: "Name", placeholder: "Enter the client name"}
+    },
+    template: `
+      <div>
+        <label 
+          :for="item.id" 
+          class="form-label">{{item.label}}</label>
+        <select 
+          v-if="item.type === 'select'"
+          v-model="item.value" 
+          class="form-control" 
+          :id="item.id" 
+          :disabled="item.disabled"
+        >
+          <option v-for="(option, index) in item.options" :key="index" :value="option">{{option}}</option>
+        </select>
+        <textarea 
+          :rows="item.rows"
+          v-else-if="item.type === 'textarea'"
+          v-model="item.value" 
+          class="form-control" 
+          :id="item.id" 
+          :disabled="item.disabled"
+          :placeholder="item.placeholder"
+          ></textarea>
+        <input 
+          v-else
+          :type="item.type"
+          v-model="item.value" 
+          class="form-control" 
+          :id="item.id" 
+          :placeholder="item.placeholder"
+          :disabled="item.disabled"
+          >
+      </div>
+    `
+  })
+
+  const newCustomerForm = Vue.component("new-customer-form", {
+    components: {
+      "v-input": vInput,
+    },
+    props: {
+      form: Object
+    },
+    template: `
+    <div class="modal fade" id="newCustomerForm" tabindex="-1" aria-labelledby="newCustomerFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <form @submit.prevent="$emit('create-customer')">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newCustomerFormLabel">New Customer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body row">
+              <div class="col-12 col-sm-4 mb-3">
+                <v-input :item="form.name" />
+              </div>
+              <div class="col-12 col-sm-4 mb-3">
+                <v-input :item="form.email" />
+              </div>
+              <div class="col-12 col-sm-4 mb-3">
+                <v-input :item="form.phone" />
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <v-input :item="form.description" />
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <v-input :item="form.address" />
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <v-input :item="form.city" />
+              </div>
+              <div class="col-12 col-sm-6 mb-3">
+                <v-input :item="form.state" />
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Create Customer</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+      
+    `
+  })
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
