@@ -1,0 +1,158 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<?!= link("vue/view/components.html"); ?>
+<script>
+  function closeDialog(id="newCustomerForm"){
+    const dialog = document.getElementById(id)
+    bootstrap.Modal.getInstance(dialog).hide()
+  }
+  function showDialog(id="newCustomerForm"){
+    const dialog = document.getElementById(id)
+    bootstrap.Modal.getInstance(dialog).show()
+  }
+
+  function copyObject(obj){
+    return JSON.parse(JSON.stringify(obj))
+  }
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      name: "CRUD APP with Vue/Bootstrap/GAS",
+      loading: false,
+      sheetName: "Customer",
+      page: 1,
+      pageSize: 15,
+      pages: 1,
+      items: [],
+      headers: [
+        {text: "ID", value: "id"},
+        {text: "Name", value: "name"},
+        {text: "Email", value: "email"},
+        {text: "Phone", value: "phone"},
+        {text: "Description", value: "description"},
+        {text: "City", value: "city"},
+        {text: "State", value: "state"},
+        {text: "Actions", value: "actions"},
+      ],
+      customerFormData: copyObject(customerFormData),
+      mode: "Create",
+    },
+    methods: {
+      decreasePageNumber(){
+        this.page --
+      },
+      increasePageNumber(){
+        this.page ++
+      },
+      showCreateForm(){
+        this.mode = "Create"
+        this.customerFormData = copyObject(customerFormData)
+      },
+      showEditForm(item){
+        this.mode = "Update"
+        this.customerFormData = copyObject(customerFormData)
+        Object.keys(this.customerFormData).forEach(key => {
+          if (item.hasOwnProperty(key)) this.customerFormData[key].value = item[key]
+        })
+      },
+      showDeleteForm(item){
+        this.mode = "Delete"
+        this.customerFormData = copyObject(customerFormData)
+        Object.keys(this.customerFormData).forEach(key => {
+          if (item.hasOwnProperty(key)) this.customerFormData[key].value = item[key]
+          this.customerFormData[key].disabled = true
+        })
+      },
+      submit(){
+        if (this.mode === "Create"){
+          this.createCustomer()
+        }else if (this.mode === "Update"){
+          this.updateCustomer()
+        } else if (this.mode === "Delete"){
+          this.deleteCustomer()
+        }
+      },
+      createCustomer(){
+        this.loading = true
+        const data = {}
+        Object.entries(this.customerFormData).forEach(([key, item]) => {
+          if (key !== "id") data[key] = item.value
+        })
+        google.script.run
+          .withSuccessHandler(res => {
+            closeDialog()
+            this.loading = false
+            this.getItems()
+          })
+          .withFailureHandler(err => {
+            console.error(err)
+            this.loading = false
+          })
+          .createItem("Customer", JSON.stringify(data))
+      },
+      updateCustomer(){
+        this.loading = true
+        const data = {}
+        Object.entries(this.customerFormData).forEach(([key, item]) => {
+          data[key] = item.value
+        })
+        google.script.run
+          .withSuccessHandler(res => {
+            closeDialog()
+            this.loading = false
+            this.getItems()
+          })
+          .withFailureHandler(err => {
+            console.error(err)
+            this.loading = false
+          })
+          .updateItem("Customer", JSON.stringify(data))
+      },
+      deleteCustomer(){
+        this.loading = true
+        const data = {id: this.customerFormData.id.value}
+        google.script.run
+          .withSuccessHandler(res => {
+            closeDialog()
+            this.loading = false
+            this.getItems()
+          })
+          .withFailureHandler(err => {
+            console.error(err)
+            this.loading = false
+          })
+          .deleteItem("Customer", JSON.stringify(data))
+      },
+      getItems(){
+        this.loading = true
+        const params = {
+          sheetName: this.sheetName,
+          pageSize: this.pageSize,
+          page: this.page,
+        }
+        google.script.run
+          .withSuccessHandler(res => {
+            const {items, pages} = JSON.parse(res)
+            this.items = [...items]
+            this.pages = pages
+            console.log(this.items)
+            console.log(this.pages)
+            this.loading = false
+          })
+          .withFailureHandler(err => {
+            console.error(err)
+            this.loading = false
+          })
+          .getItems(JSON.stringify(params))
+      }
+    },
+    watch:{
+      page: function(){
+        this.getItems()
+      },
+    },
+    created(){
+      this.getItems()
+    }
+  })
+</script>
