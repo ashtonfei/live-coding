@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<?!= include_("vue/vuetify.html"); ?>
+<?!= include_("vue/store.html"); ?>
+<?!= include_("vue/components.html"); ?>
+<?!= include_("vue/router.html"); ?>
+
+<script>
+  const app = new Vue({
+    el: "#app",
+    vuetify,
+    store,
+    router,
+    computed: {
+      ...Vuex.mapState({
+        loading: "loading",
+        title: "title",
+      })
+    }
+  })
+</script>

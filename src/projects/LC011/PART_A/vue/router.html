@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+  const HomeView = {
+    template: `
+      <div>
+        <h1>Home</h1>
+      </div>
+    `
+  }
+
+  const AboutView = {
+    template: `
+      <div>
+        <h1>About</h1>
+      </div>
+    `
+  }
+
+  const routes = [
+    { path: '/', component: HomeView, meta: {icon: "mdi-home", title: "Home"} },
+    { path: '/about', component: AboutView, meta: {icon: "mdi-information", title: "About"} }
+  ]
+
+  const router = new VueRouter({
+    routes
+  })
+</script>

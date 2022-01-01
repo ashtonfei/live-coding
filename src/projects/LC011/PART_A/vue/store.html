@@ -1,0 +1,21 @@
+<script src="https://unpkg.com/vuex/dist/vuex.js"></script>
+<script>
+  const store = new Vuex.Store({
+    state: {
+      loading: false,
+      name: "LC011",
+      title: "Automate everything"
+    },
+    mutations: {
+      startLoading(state){
+        state.loading = true
+      },
+      stopLoading(state){
+        state.loading = false
+      },
+    },
+    actions: {
+
+    },
+  })
+</script>
