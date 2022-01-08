@@ -1,0 +1,114 @@
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+  const HomeView = {
+    template: `
+      <div>
+        <h1>Home</h1>
+      </div>
+    `
+  }
+
+  const AboutView = {
+    template: `
+      <div>
+        <h1>About</h1>
+      </div>
+    `
+  }
+
+  const LoginView = {
+    data: function(){
+      return {
+        form: {
+          email: {
+            value: null,
+            label: "Email",
+            icon: "mdi-email",
+            type: "email",
+            rules: [v => !!v || "Email is required"],
+          },
+          password: {
+            value: null,
+            label: "Password",
+            icon: "mdi-lock",
+            type: "password",
+            rules: [v => !!v || "Password is required"],
+          },
+        },
+      }
+    },
+    methods: {
+      login(){
+        const isFormValid = this.$refs.form.validate()
+        if (!isFormValid) return
+        const email = this.form.email.value
+        const password = this.form.password.value
+        this.$store.dispatch("login", {email, password})
+      },
+    },
+    computed: {
+      ...Vuex.mapState({
+        loading: "loading",
+      }),
+    },
+    template: `
+      <div>
+        <v-progress-linear
+          :active="loading"
+          :indeterminate="loading"
+          absolute
+          top
+          color="primary"
+        ></v-progress-linear>
+        <v-row>
+          <v-spacer></v-spacer>
+          <v-col cols="12" sm="8" md="6" lg="4">
+            <h1 class="mb-4 primary--text">Login</h1>
+            <v-form ref="form" @submit.prevent="login">
+              <my-input :item="form.email"></my-input>
+              <my-input :item="form.password"></my-input>
+              <v-btn type="submit" color="primary" depressed block :disabled="loading">
+                <v-icon left>mdi-login</v-icon>
+                Login
+              </v-btn>
+            </v-form>
+          </v-col>
+          <v-spacer></v-spacer>
+        </v-row>
+      </div>
+    `
+  }
+
+  const routes = [
+    { path: '/', component: HomeView, meta: {icon: "mdi-home", title: "Home"} },
+    { path: '/about', component: AboutView, meta: {icon: "mdi-information", title: "About"} },
+    { path: '/login', component: LoginView, meta: {icon: "mdi-login", title: "Login"} },
+  ]
+
+  const router = new VueRouter({
+    routes
+  })
+
+  router.beforeEach((to, from, next) => {
+    const isAuth = store.getters.isAuth
+    console.log({isAuth})
+    if (to.path !== '/login' && !isAuth) return next("/login")
+    return next()
+  })
+
+  router.afterEach((to, from) => {
+    google.script.history.push(null, null, to.path)
+  })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

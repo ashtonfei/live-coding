@@ -1,0 +1,151 @@
+<script>
+
+  const MySnackbar = Vue.component("my-snackbar", {
+    computed: {
+      ...Vuex.mapState({
+        snackbar: "snackbar",
+      }),
+    },
+    template: `
+      <v-snackbar
+        v-model="snackbar.show"
+        :timeout="snackbar.timeout || 3000"
+        :color="snackbar.color || 'dark'"
+      >
+        {{ snackbar.message }}
+        <template v-slot:action="{ attrs }">
+          <v-btn
+            color="white"
+            text
+            v-bind="attrs"
+            @click="$store.commit('closeSnackbar')"
+          >
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+    `
+  })
+  const MyInput = Vue.component("my-input", {
+    props: {
+      item: Object,
+    },
+    computed: {
+      ...Vuex.mapState({
+        loading: "loading",
+      }),
+    },
+    template: `
+      <v-text-field
+        :outlined="item.outlined || true"
+        :dense="item.dense || true"
+        :label="item.label"
+        :prepend-inner-icon="item.icon || null"
+        :placeholder="item.placeholder"
+        :type="item.type"
+        :hideDetails="item.hideDetails || false"
+        :rules="item.rules"
+        :disabled="item.loading || loading"
+        v-model="item.value"
+        @change="$emit('change')"
+      ></v-text-field>
+    `
+  })
+
+  const MyNavbar = Vue.component('my-navbar', {
+    data: function(){
+      return {
+        drawer: true,
+      }
+    },
+    computed: {
+      pages(){
+        console.log(this.$router)
+        return this.$router.options.routes
+      },
+      ...Vuex.mapState({
+        name: "name",
+        title: "title",
+        loading: "loading",
+        user: "user",
+      }),
+      ...Vuex.mapGetters({
+        isAuth: "isAuth",
+      }),
+    },
+    methods: {
+      logout(){
+        const token = this.user.toekn // get the token from local storage
+        this.$store.dispatch("logout", {token})
+      },
+    },
+    template: `
+      <div v-if="isAuth">
+        <v-navigation-drawer app v-model="drawer">
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title class="text-h6">
+                {{ user.name }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ title }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list
+            dense
+            nav
+          >
+            <template v-for="item in pages">
+              <v-list-item
+                v-if="item.path !== '/login'"
+                :key="item.path"
+                :to="item.path"
+                link
+              >
+                <v-list-item-icon>
+                  <v-icon>{{ item.meta.icon }}</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>{{ item.meta.title }}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </template>
+
+            <v-list-item link @click="$vuetify.theme.dark = !$vuetify.theme.dark">
+              <v-list-item-icon>
+                <v-icon>{{ $vuetify.theme.dark ? 'mdi-lightbulb-on' : 'mdi-lightbulb-off' }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>{{ $vuetify.theme.dark ? 'Light Mode' : 'Dark Mode' }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item link @click="logout">
+              <v-list-item-icon>
+                <v-icon>mdi-logout</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Logout</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+
+        </v-navigation-drawer>
+        <v-app-bar app flat>
+          <v-progress-linear
+            :active="loading"
+            :indeterminate="loading"
+            absolute
+            bottom
+            color="primary"
+          ></v-progress-linear>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-toolbar-title>{{ $route.meta.title}}</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-app-bar>
+      </div>
+    `
+  })
+</script>

@@ -1,0 +1,84 @@
+<script src="https://unpkg.com/vuex/dist/vuex.js"></script>
+<script>
+  const store = new Vuex.Store({
+    state: {
+      loading: false,
+      snackbar: {
+        message: null,
+        color: "primary",
+        timeout: 3000,
+        show: false,
+      },
+      name: "LC011",
+      title: "Automate everything",
+      user: null,
+    },
+    getters: {
+      isAuth: (state) => {
+        return state.user ? true : false
+      }
+    },
+    mutations: {
+      updateState(state, {key, value}){
+        state[key] = value
+      },
+      startLoading(state){
+        state.loading = true
+      },
+      stopLoading(state){
+        state.loading = false
+      },
+      showSnackbar(state, snackbar){
+        snackbar.show = true
+        state.snackbar = snackbar
+        state.loading = false
+      },
+      closeSnackbar(state){
+        state.snackbar.show = false
+      },
+    },
+    actions: {
+      async login({commit}, params){
+        commit("startLoading")
+        try{
+          const {success, message, user} = await Utils.request("login", params)
+          if (!success){
+            commit("showSnackbar", {message, color: "error"})
+          }else{
+            commit("updateState", {key: "user", value: user})
+            commit("showSnackbar", {message, color: "success"})
+            router.push("/")
+          }
+        }catch(err){
+          commit("showSnackbar", {message: err.message, color: "error"})
+        }
+      },
+      async logout({commit}, params){
+        commit("startLoading")
+        try{
+          const {success, message} = await Utils.request("logout", params)
+          if (!success){
+            commit("showSnackbar", {message, color: "error"})
+          }else{
+            commit("updateState", {key: "user", value: null})
+            commit("showSnackbar", {message, color: "success"})
+            router.push("/login")
+          }
+        }catch(err){
+          commit("showSnackbar", {message: err.message, color: "error"})
+        }
+      }
+    },
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
