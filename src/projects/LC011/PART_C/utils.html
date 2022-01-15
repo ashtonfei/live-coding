@@ -1,0 +1,36 @@
+<script>
+  const Utils = {
+    KEY: {
+      TOKEN: "_token"
+    },
+  }
+
+  Utils.request = async (functionName, params={}) => {
+    params = JSON.stringify(params)
+    return new Promise((resolve, reject) => {
+      google.script.run
+        .withSuccessHandler((response) => resolve(JSON.parse(response)))
+        .withFailureHandler((err) => reject(err))
+        [functionName](params)
+    })
+  }
+
+  Utils.setToken = (token) => {
+    if (typeof token === "object") token = JSON.stringify(token)
+    try{
+      localStorage.setItem(Utils.KEY.TOKEN, token)
+    }catch(err){
+      // pass
+      console.log(err)
+    }
+  }
+
+  Utils.getToken = () => {
+    try{
+      return localStorage.getItem(Utils.KEY.TOKEN)
+    }catch(err){
+      // pass
+      console.log(err)
+    }
+  }
+</script>
