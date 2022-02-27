@@ -21,6 +21,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC012](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC012) | Clock In/Out with Google Forms         | [Watch](https://youtu.be/4r0bR61XP38) | 5/Feb/2022    | `spreadsheet` `googleform` | Clock In/Out with Google Forms and Apps Script                                                |
 | [LC013](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC013) | Document Signing with Google Form      | [Watch](https://youtu.be/oAgUVpRhLRg) | 16/Feb/2022   | `googledoc` `googleform`   | Add Signature with Google Form and Google Doc                                                 |
 | [LC014](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC014) | World Tides Notification               | [Watch](https://youtu.be/Q3bMQMVasRQ) | 24/Feb/2022   | `googlesheet`              | Create Tide Events in Google Calendar                                                         |
+| [LC015](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC015) | Rich Text Formatter                    | [Watch](https://youtu.be/EsBhbjdrI-k) | 27/Feb/2022   | `googlesheet`              | A rich text formatter for Google Sheet                                                        |
 
 ## Build commands
 
