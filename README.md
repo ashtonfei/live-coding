@@ -23,6 +23,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC014](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC014) | World Tides Notification               | [Watch](https://youtu.be/Q3bMQMVasRQ) | 24/Feb/2022   | `googlesheet`              | Create Tide Events in Google Calendar                                                         |
 | [LC015](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC015) | Rich Text Formatter                    | [Watch](https://youtu.be/EsBhbjdrI-k) | 27/Feb/2022   | `googlesheet`              | A rich text formatter for Google Sheet                                                        |
 | [LC016](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC016) | Twilio SMS Google Sheet                | [Watch](https://youtu.be/FSoJsJWx7ig) | 1/Mar/2022    | `googlesheet`              | Send SMS from Google Sheet with Twilio API                                                    |
+| [LC017](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC017) | Sheet Protect API                      | [Watch](https://youtu.be/VSDM3jV3_EU) | 3/Apr/2022    | `googlesheet`              | Add protection to Google Sheet                                                                |
 
 ## Build commands
 
