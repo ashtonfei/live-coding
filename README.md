@@ -1,7 +1,8 @@
 # LIVE CODING
 
 All my live coding projects published on YouTube channel can be found here in the projects folder.
-[![Live Coding Projects](https://user-images.githubusercontent.com/16481229/136651006-e3f14efa-f68c-42fc-bf1b-e39556abfbf3.png)](https://www.youtube.com/watch?v=uwD91dKRw2w&list=PLQhwjnEjYj8ClqO6NG2fFka53xVOzIN_b)
+[![Live Coding Cover](https://user-images.githubusercontent.com/16481229/177028719-0e2b963d-f7e1-4073-9991-1defc7c56937.jpeg)
+](https://www.youtube.com/watch?v=uwD91dKRw2w&list=PLQhwjnEjYj8ClqO6NG2fFka53xVOzIN_b)
 
 ## List of projects
 
