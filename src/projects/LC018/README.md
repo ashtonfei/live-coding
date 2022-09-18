@@ -1,6 +1,7 @@
 # LC018 GAS VUE3 TEMPLATE
 
 This template should help get you started developing with Vue 3, and Google Apps Script.
+[<img width="706" alt="image" src="https://user-images.githubusercontent.com/16481229/190896291-6542f105-9f68-4940-b66c-99cc9287d085.png">](https://script.google.com/macros/s/AKfycbz1YWvxhMUXm8GySOywEKMxsbx7J5nVgPy_ngTcV4dyhOVzOC8ky2QR3Fz93SjjPKtyug/exec)
 
 ## Recommended IDE Setup
 
