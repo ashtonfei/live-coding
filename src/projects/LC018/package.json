@@ -1,0 +1,34 @@
+{
+  "name": "lc018",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "build-gas": "npm run build && npm run gas && clasp push",
+    "dev": "vite",
+    "gas": "chmod +x ./gas.sh && ./gas.sh",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@mdi/font": "5.9.55",
+    "pinia": "^2.0.21",
+    "roboto-fontface": "*",
+    "vue": "^3.2.38",
+    "vuetify": "npm:@vuetify/nightly@next",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.1",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@types/google-apps-script": "^1.0.55",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "prettier": "^2.7.1",
+    "vite": "^3.0.9",
+    "vite-plugin-vuetify": "^1.0.0-alpha.12",
+    "vue-cli-plugin-vuetify": "~2.5.8"
+  }
+}
