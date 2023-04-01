@@ -26,6 +26,7 @@ All my live coding projects published on YouTube channel can be found here in th
 | [LC016](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC016) | Twilio SMS Google Sheet                | [Watch](https://youtu.be/FSoJsJWx7ig) | 1/Mar/2022    | `googlesheet`              | Send SMS from Google Sheet with Twilio API                                                    |
 | [LC017](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC017) | Sheet Protect API                      | [Watch](https://youtu.be/VSDM3jV3_EU) | 3/Apr/2022    | `googlesheet`              | Add protection to Google Sheet                                                                |
 | [LC018](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC018) | GAS Vue3 Template                      | [Watch](https://youtu.be/O3K88f4sRaA) | 18/Sep/2022    | `googlesheet`              | Web App with Vue3 and Apps Script                                                                |
+| [LC019](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC019) | Export Sheets as PDF                   | [Watch](https://youtu.be/D3d9C0bXY4c) | 01/Apr/2023   | `googlesheet`              | UrlfetchApp.fetchAll                                   |
 
 ## Build commands
 
