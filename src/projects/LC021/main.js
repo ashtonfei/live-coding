@@ -35,17 +35,27 @@ const success_ = createAlert_()("✅ SUCCESS");
 const warning_ = createAlert_()("⚠️ WARNING");
 const error_ = createAlert_()("❗️ERROR");
 
+const nameCheck = (name) => {
+  const ss = SpreadsheetApp.getActive();
+  const sheet = ss.getSheets().find((v) => v.getSheetId() == 0);
+  const values = sheet.getDataRange().getValues();
+  const foundName = values.find((v) => v[0] == name);
+  if (!foundName) return true;
+  return `❗️ "${name}" was already used, try another one please.`;
+};
+
 const nameInput_ = createInput_("👉 Name")("Enter your name here:");
 const nameRules = [
   (name) => name.length >= 3 || "❗️ Name should have 3 letters at least.",
   (name) => name.length <= 10 || "❗️ Name should have 10 letters at most.",
-  (name) => /^[a-zA-Z]$/.test(name) || "❗️ Only letters are allowed.",
+  (name) => /^[a-zA-Z]+$/.test(name) || "❗️ Only letters are allowed.",
   (name) =>
     /^[A-Z][a-z]+$/.test(name) ||
     "❗️Only and the first letter must be upper case.",
-  (name) =>
-    ["Alice", "Bob", "Chris", "Doris", "Ella"].includes(name) === false ||
-    `❗️ "${name}" was already used, try another one please.`,
+  nameCheck,
+  // (name) =>
+  //   ["Alice", "Bob", "Chris", "Doris", "Ella"].includes(name) === false ||
+  //   `❗️ "${name}" was already used, try another one please.`,
 ];
 
 const getName = () => {
@@ -53,12 +63,26 @@ const getName = () => {
   if (name === null) {
     return warning_("Action was cancelled.");
   }
+  const ss = SpreadsheetApp.getActive();
+  const sheet = ss.getSheets().find((v) => v.getSheetId() == 0);
+  sheet && sheet.appendRow([name]);
   success_(`The name entered was ${name}.`);
+};
+
+const getEmail = () => {
+  const rules = [(v) => /@/.test(v) || "Email should have @ sign."];
+  const email = createInput_("Email")("Enter your email:")(rules);
+  if (!email) {
+    return warning_("Action was cancelled.");
+  }
+  success_(`The email entered was ${email}.`);
+  console.log({ email });
 };
 
 const onOpen = () => {
   SpreadsheetApp.getUi()
     .createMenu("LC021")
     .addItem("Get name", "getName")
+    .addItem("Get email", "getEmail")
     .addToUi();
 };
