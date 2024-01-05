@@ -2,7 +2,7 @@
 
 All my live coding projects published on YouTube channel can be found here in
 the projects folder.
-[![Live Coding Cover](https://user-images.githubusercontent.com/16481229/177028719-0e2b963d-f7e1-4073-9991-1defc7c56937.jpeg)](https://www.youtube.com/watch?v=uwD91dKRw2w&list=PLQhwjnEjYj8ClqO6NG2fFka53xVOzIN_b)
+[![Live Coding - Google Apps Script](https://github.com/ashtonfei/live-coding/assets/16481229/6e2ff877-cc82-4751-be5a-0e6583d8898f)](https://www.youtube.com/watch?v=uwD91dKRw2w&list=PLQhwjnEjYj8ClqO6NG2fFka53xVOzIN_b)
 
 ## List of projects
 
