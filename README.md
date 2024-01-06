@@ -28,7 +28,7 @@ the projects folder.
 | [LC018](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC018) | GAS Vue3 Template                           | [Watch](https://youtu.be/O3K88f4sRaA) | 18/Sep/2022   | `googlesheet`              | Web App with Vue3 and Apps Script                                                             |
 | [LC019](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC019) | Export Sheets as PDF                        | [Watch](https://youtu.be/D3d9C0bXY4c) | 01/Apr/2023   | `googlesheet`              | UrlfetchApp.fetchAll                                                                          |
 | [LC020](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC020) | Debounce OnEdit Event in Google Sheets      | [Watch](https://youtu.be/p4VCXE61WS4) | 05/Sep/2023   | `googlesheet`              | UrlfetchApp.fetchAll                                                                          |
-| [LC021](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC021) | Add Validations to Prompts in Google Sheets | [Watch](https://youtu.be/B7_kHjVAR3I) | 05/Jan/2024   | `googlesheet`              | Validations Prompts in Google Sheet                                                           |
+| [LC021](https://github.com/ashtonfei/live-coding/tree/main/src/projects/LC021) | Add Validations to Prompts in Google Sheets | [Watch](https://youtu.be/vjPEaDQSynY) | 05/Jan/2024   | `googlesheet`              | Validations Prompts in Google Sheet                                                           |
 
 ## Build commands
 
