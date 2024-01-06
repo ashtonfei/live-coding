@@ -1,9 +1,9 @@
-const _createMenu_ =
+const createMenu_ =
   (ui = SpreadsheetApp.getUi()) => (items, caption = null) => {
     const menu = caption ? ui.createMenu(caption) : ui.createAddonMenu();
     const createMenuItem = ({ title, items, caption, fn, sep }) => {
       if (title && items) {
-        return menu.addSubMenu(_createMenu_(ui)(items, title));
+        return menu.addSubMenu(createMenu_(ui)(items, title));
       }
       if (caption && fn) return menu.addItem(caption, fn);
 
@@ -43,7 +43,7 @@ const MENU_ITEMS = [
 
 const onOpen = () => {
   const ui = SpreadsheetApp.getUi();
-  const buildMenu = _createMenu_(ui);
+  const buildMenu = createMenu_(ui);
   // create a custom menu
   const menu = buildMenu(MENU_ITEMS, "LC022");
   // create an addon menu
